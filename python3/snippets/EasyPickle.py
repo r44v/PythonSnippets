@@ -6,7 +6,7 @@ class EasyPickle:
     def __init__(self, always_save=True):
         """
         Creates dict file to store as pickle
-        All keys and values will be stored as string format
+        All keys will be stored as string
 
         :param always_save:
         """
@@ -16,7 +16,7 @@ class EasyPickle:
         else:
             self.__storage = {}
 
-        self.__always_save = always_save
+        self.always_save = always_save
 
     def __dump(self):
         """
@@ -44,7 +44,6 @@ class EasyPickle:
         :param key:
         :return:
         """
-        key = str(key)
         if key in self.__storage.keys():
             return self.__storage[key]
         else:
@@ -54,14 +53,14 @@ class EasyPickle:
         """
         Sets value for key
 
-        if always_save is True it also writes data to disk
+        if self.always_save is True this also writes data to disk
 
         :param key:
         :param value:
         :return:
         """
-        self.__storage[str(key)] = str(value)
-        if self.__always_save:
+        self.__storage[str(key)] = value
+        if self.always_save:
             self.__dump()
 
     def save(self):

@@ -181,3 +181,12 @@ abc
 # Third result
 abc
 ```
+
+## Mysql timestamp
+
+```python
+import time
+
+t = time.gmtime() # current time
+print(time.strftime("%Y-%m-%d %H:%M:%S", t))
+```

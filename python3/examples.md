@@ -112,7 +112,7 @@ def check(ip, port):
 |2**3|8|
 |[1,2]+[3,4]|[1, 2, 3, 4]|
 |"gg" in "eggs"|True|
-|map(func, input)|<map iteratable>|
+|map(func, input)|\<map iteratable\>|
 |[*map(func, input)]|[ \<list\> ]|
 |list(map(func, input))|[ \<list\> ]|
 |ord() \<-\> chr()|ASCII <-> INT|
@@ -135,7 +135,7 @@ index   int     oct     hex
 
 ## Range example
 
-The range syntax is range(<start>, <stop>, <step>)
+The range syntax is range(\<start\>, \<stop\>, \<step\>)
 
 ```python
 for i in range(1,8,3):

@@ -10,7 +10,7 @@ class EasyPickle:
 
         :param always_save:
         """
-        self.__file = "str_dict.pickle"
+        self.file = "str_dict.pickle"
         if os.path.exists(self.__file):
             self.__storage = self.__load()
         else:
@@ -24,7 +24,7 @@ class EasyPickle:
 
         :return:
         """
-        with open(self.__file, "wb") as pickle_out:
+        with open(self.file, "wb") as pickle_out:
             pickle.dump(self.__storage, pickle_out)
 
     def __load(self):
@@ -33,7 +33,7 @@ class EasyPickle:
 
         :return:
         """
-        with open(self.__file, "rb") as pickle_in:
+        with open(self.file, "rb") as pickle_in:
             storage_dict = pickle.load(pickle_in)
         return storage_dict
 

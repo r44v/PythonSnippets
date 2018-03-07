@@ -103,3 +103,81 @@ def check(ip, port):
         print(str(ip) + " - Error on connect for port " + str(port))
     s.close()
 ```
+
+## Some basic manipulations
+
+|Input|Result|
+|-----|------|
+|[2]*5|[2, 2, 2, 2, 2]|
+|2**3|8|
+|[1,2]+[3,4]|[1, 2, 3, 4]|
+|"gg" in "eggs"|True|
+|map(func, input)|<map iteratable>|
+|[*map(func, input)]|[ \<list\> ]|
+|list(map(func, input))|[ \<list\> ]|
+|ord() \<-\> chr()|ASCII <-> INT|
+|str.join(".", ['a','b','c','d'])|"a.b.c.d"|
+|chr(int('01100001', 2))|'a'|
+|int('01100001', 2)|97|
+|bin(104)[2:]|'1101000'|
+
+## Pretty header
+
+```python
+head = "index\tint\toct\thex".expandtabs(8)
+print(head + "\n" + "-"*len(head))
+```
+
+```
+index   int     oct     hex
+---------------------------
+```
+
+## Range example
+
+The range syntax is range(<start>, <stop>, <step>)
+
+```python
+for i in range(1,8,3):
+    print(i)
+```
+
+```
+1
+4
+7
+```
+
+## Interesting line splits
+
+```python
+# First example
+('Hello '
+
+'World')
+
+# Second example
+print("a" 
+      + "b" 
+      + "c")
+
+# Third example
+txt = "b" \
+      + "c" \
+    .upper()\
+    .lower()
+print("a"
+      + txt)
+
+```
+
+```
+# First result
+'Hello World'
+
+# Second result
+abc
+
+# Third result
+abc
+```

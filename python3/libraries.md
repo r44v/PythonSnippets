@@ -130,3 +130,32 @@ value = easygui.enterbox("Enter text:")
 easygui.textbox(title="Output", text="Window title blablabla")
 # there is more on the man page
 ```
+
+## PyYaml
+[Pypi](https://pypi.python.org/pypi/PyYAML)
+
+```python
+import yaml
+
+config_file = 'config.yml'
+data = {"api": {"secret": 'YXBpc2VjcmV0'}, "user": {"fname": "John", "lname": "Smith"}}
+
+with open(config_file, 'w') as outfile:
+    yaml.dump(data, outfile, default_flow_style=False)
+
+with open(config_file, 'r') as infile:
+    config = yaml.load(infile)
+
+# this line displays the dict again as read from the file
+# {'api': {'secret': 'YXBpc2VjcmV0'}, 'user': {'fname': 'John', 'lname': 'Smith'}}
+print(config)
+```
+
+This generates and reads the following file (config.yml)
+```yaml
+api:
+  secret: YXBpc2VjcmV0
+user:
+  fname: John
+  lname: Smith
+```

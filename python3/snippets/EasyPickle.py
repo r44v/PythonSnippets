@@ -11,7 +11,7 @@ class EasyPickle:
         :param always_save:
         """
         self.file = "str_dict.pickle"
-        if os.path.exists(self.__file):
+        if os.path.exists(self.file):
             self.__storage = self.__load()
         else:
             self.__storage = {}
@@ -37,17 +37,18 @@ class EasyPickle:
             storage_dict = pickle.load(pickle_in)
         return storage_dict
 
-    def get(self, key):
+    def get(self, key, default=None):
         """
         Returns value assigned to key
 
         :param key:
+        :param default:
         :return:
         """
         if key in self.__storage.keys():
             return self.__storage[key]
         else:
-            return None
+            return default
 
     def put(self, key, value):
         """

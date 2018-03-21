@@ -201,3 +201,15 @@ print(sys.argv)
 
 import argparse
 ```
+
+## reduce
+
+[Great explenation of reduce](https://www.python-course.eu/lambda.php)
+
+```python
+def reduce(callback, data):
+    res = data[0]
+    for x in range(1, len(data)):
+        res = callback(res, data[x])
+    return res
+```

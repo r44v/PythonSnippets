@@ -190,3 +190,14 @@ import time
 t = time.gmtime() # current time
 print(time.strftime("%Y-%m-%d %H:%M:%S", t))
 ```
+
+## Shell arguments and flags
+
+```python
+import getopt
+
+import sys
+print(sys.argv)
+
+import argparse
+```

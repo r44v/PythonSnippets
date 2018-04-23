@@ -37,10 +37,14 @@ def make_bin_img(text):
     s = s.reshape(sqrt, -1)
 
     # Add orientation border
-    b = np.full((s.shape[0] + 2, s.shape[1] + 2), 0)
+    fill = 1
+    b = np.full((s.shape[0] + 2, s.shape[1] + 2), 1 if not fill else 0)
     b[1:-1, 1:-1] = s
-    b[0, 0] = 1
-    b[2, 0] = 1
+    b[0, 0] = fill
+    b[2, 0] = fill
+    b[-1, 0] = fill
+    b[-1, -1] = fill
+    b[0, -1] = fill
     s = b
 
     # Needed when using png library

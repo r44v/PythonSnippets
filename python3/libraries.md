@@ -4,7 +4,7 @@ Some python snippets from non native libraries
 ## Simple url request
 [pypi](https://pypi.python.org/pypi/requests)
 
-[Python request guide](http://docs.python-requests.org/en/master/)
+[Python requests guide](http://docs.python-requests.org/en/master/)
 
 [Stack overflow with source of code](http://stackoverflow.com/questions/4476373/simple-url-get-post-function-in-python)
 
@@ -158,4 +158,39 @@ api:
 user:
   fname: John
   lname: Smith
+```
+
+## Paramiko (ssh + scp)
+[Official website](http://www.paramiko.org/installing.html)
+[scp module](https://github.com/jbardin/scp.py)
+
+```python
+import paramiko
+from scp import SCPClient
+
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+ssh.connect(
+    '<host>',
+    username='<username>',
+    password='<password>'
+    )
+
+cmd = "echo -n \"name:? \";read answer; echo \"You entered: $answer\""
+stdin, stdout, stderr = ssh.exec_command(cmd)
+stdin.write('user\n') # Always break
+stdin.flush()
+print({
+    'out': stdout.readlines(),
+    'err': stderr.readlines(),
+    'retval': stdout.channel.recv_exit_status()
+    })
+
+ssh.exec_command('echo it works > test.txt')
+scp = SCPClient(ssh.get_transport())
+scp.get('test.txt')
+
+scp.close()
+ssh.close()
 ```

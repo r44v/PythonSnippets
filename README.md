@@ -7,13 +7,30 @@ Just a repo with python snippets
             ▀█▄█▄███▀   ▀██▄█▄█
 ```
 
-The python 3.6 folder has the most examples
+---
 
-Also I added a sqlite3 example class for easy db manipulation. under python3.6/classes/DbHandler.py
+# Tools
 
-I suggest taking a look at the following files for the most up to date examples
+I became a big fan of [pipenv](https://pipenv.readthedocs.io/en/latest/) but lately I started using the venv module more.
+
 ```
-python3.6
-    libraries.md
-    examples.md
+python -m venv venv
+
+# Ubuntu
+venv/bin/activate
+# Windows
+venv\Scripts\activate
+
+pip install -r requirements.txt
 ```
+
+# IDE
+[Visual studio code](http://visualstudio.com/) is my editor of choice. Second place is [PyCharm by Jetbrains](https://www.jetbrains.com/pycharm/).
+
+for vscode I suggest you install the following extensions.
+- .gitingnore Generator
+- Happy flasker
+- Json tools
+- Python
+- Rainbow CSV
+- Yaml
